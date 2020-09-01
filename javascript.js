@@ -21,7 +21,7 @@ function generatePassword(){
     let password = '';
     //Initial prompt for length of password
     var pwLength = prompt("How many characters are in the password?");
-    //Conditional on password being of a specific length
+    //Conditional statements defined by confirm function on password being of a specified length 8-128 characters long
     if(pwLength >=8 && pwLength <= 128){
         var upperCase = confirm("Do you want uppercase letters in your password?");
         if(upperCase == true){
@@ -31,6 +31,7 @@ function generatePassword(){
                     if(specCase == true){
                         //PW includes lower, upper, numbers and special characters
                         var allTrue = lowCase.concat(upCase, numSet, specSet);
+                            //In each nested if block, the for loop executes the number of times equal to the defined password length to randomly choose characters from a combined/concatenated array of character types and console logs as a string to variable password
                             for(var i = 0; i < pwLength; i++){
                                 nxtChar = allTrue[Math.floor(Math.random() * Math.floor(allTrue.length))];
                                 password = password.toString()+nxtChar.toString();
@@ -116,8 +117,10 @@ function generatePassword(){
 
     }
     else{
+        //If a number <8 or >128, or another other than a number is typed into the intial alert, the follow alert is executed
         alert("Password must be between 8 and 128 characters long.");
     }
+    //This function results in the output of the variable password
     return password;
 }
 
