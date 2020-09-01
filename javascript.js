@@ -7,8 +7,6 @@ var lowCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", 
 var numSet = ["0","1","2","3","4","5","6","7","8","9"];
 var specSet = ["!","#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","]","^","_","`","{","|","}","~"];
 
-//Initial prompt for length of password
-var pwLength = prompt("How many characters are in the password?");
 
 // Write password to the #password input
 function writePassword() {
@@ -21,7 +19,8 @@ function writePassword() {
 //Generate and return string password for function writePassword to print
 function generatePassword(){
     let password = '';
-    
+    //Initial prompt for length of password
+    var pwLength = prompt("How many characters are in the password?");
     //Conditional on password being of a specific length
     if(pwLength >=8 && pwLength <= 128){
         var upperCase = confirm("Do you want uppercase letters in your password?");
@@ -123,4 +122,4 @@ function generatePassword(){
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword());
+generateBtn.addEventListener("click", writePassword);
